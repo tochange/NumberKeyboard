@@ -1,0 +1,14 @@
+<resources>
+    <integer name="numColumns">3</integer>
+    <declare-styleable name="NumberKeyboard">
+        <attr name="with_control" format="boolean" />
+        <attr name="with_ok_cancel" format="boolean" />
+        <attr name="key_type" format="enum">
+            <enum name="zero_zero" value="2" />
+            <enum name="x" value="4" />
+            <enum name="dot" value="8" />
+        </attr>
+        <attr name="width_dp" format="integer" />
+        <attr name="height_dp" format="integer" />
+    </declare-styleable>
+</resources>

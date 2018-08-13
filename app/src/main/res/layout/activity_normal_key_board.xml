@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -17,10 +18,16 @@
         android:textColor="#333333"
         android:textSize="16sp" />
 
-    <com.lnyp.pswkeyboard.VirtualKeyboardView
+    <com.lnyp.pswkeyboard.NumberKeyboard
         android:id="@+id/virtualKeyboardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom" />
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        app:height_dp="200"
+        app:key_type="x"
+        app:width_dp="300"
+        app:with_control="true"
+        app:with_ok_cancel="true" />
 
 </RelativeLayout>

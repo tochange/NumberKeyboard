@@ -7,7 +7,7 @@
     <TextView
         android:id="@+id/btn_keys"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="match_parent"
         android:layout_centerInParent="true"
         android:background="@drawable/selector_gird_item"
         android:gravity="center"
@@ -18,7 +18,7 @@
     <RelativeLayout
         android:id="@+id/imgDelete"
         android:layout_width="wrap_content"
-        android:layout_height="60dp"
+        android:layout_height="match_parent"
         android:layout_centerInParent="true">
 
         <ImageView
@@ -28,6 +28,5 @@
             android:src="@mipmap/keyboard_delete_img" />
 
     </RelativeLayout>
-
 
 </RelativeLayout>

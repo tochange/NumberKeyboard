@@ -7,6 +7,7 @@ import android.text.InputType;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.lang.reflect.Method;
 
@@ -39,7 +40,7 @@ public class NormalKeyBoardActivity extends AppCompatActivity {
             }
         }
 
-        final VirtualKeyboardView virtualKeyboardView = (VirtualKeyboardView) findViewById(R.id.virtualKeyboardView);
+        final NumberKeyboard virtualKeyboardView = (NumberKeyboard) findViewById(R.id.virtualKeyboardView);
         textAmount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -47,10 +48,10 @@ public class NormalKeyBoardActivity extends AppCompatActivity {
             }
         });
 
-        virtualKeyboardView.setCallback(new VirtualKeyboardView.Callback() {
+        virtualKeyboardView.setCallback(new NumberKeyboard.Callback() {
             @Override
             public void onItemClick(int position, String clickContent) {
-                if (position == VirtualKeyboardView.DELETE_EVENT_INDEX) {
+                if (position == NumberKeyboard.DELETE_EVENT_INDEX) {
                     String amount = textAmount.getText().toString().trim();
                     if (amount.length() > 0) {
                         amount = amount.substring(0, amount.length() - 1);
@@ -59,16 +60,10 @@ public class NormalKeyBoardActivity extends AppCompatActivity {
                         Editable ea = textAmount.getText();
                         textAmount.setSelection(ea.length());
                     }
-                } else if (position == 9) {// to do 没有小数点
-                    String amount = textAmount.getText().toString().trim();
-                    if (!amount.contains(".")) {
-                        amount = amount + clickContent;
-                        textAmount.setText(amount);
-
-                        Editable ea = textAmount.getText();
-                        textAmount.setSelection(ea.length());
-                    }
                 } else {
+                    if (position == NumberKeyboard.TYPE_EVENT_INDEX) {
+                        Toast.makeText(NormalKeyBoardActivity.this, "点击了：" + clickContent, Toast.LENGTH_SHORT).show();
+                    }
                     String amount = textAmount.getText().toString().trim();
                     amount = amount + clickContent;
 
@@ -77,6 +72,11 @@ public class NormalKeyBoardActivity extends AppCompatActivity {
                     Editable ea = textAmount.getText();
                     textAmount.setSelection(ea.length());
                 }
+            }
+
+            @Override
+            public void onOKOrCancel(boolean isOk) {
+                Toast.makeText(NormalKeyBoardActivity.this, "确认：" + isOk, Toast.LENGTH_SHORT).show();
             }
         });
     }

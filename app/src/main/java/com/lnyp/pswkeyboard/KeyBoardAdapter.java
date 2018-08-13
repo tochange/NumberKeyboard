@@ -1,27 +1,21 @@
 package com.lnyp.pswkeyboard;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.BaseAdapter;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.lnyp.pswkeyboard.R;
-
 import java.util.ArrayList;
 
-/**
- * 九宫格键盘适配器
- */
-public class KeyBoardAdapter extends BaseAdapter {
-
-
+class KeyBoardAdapter extends BaseAdapter {
+    private int itemHeight;
     private Context mContext;
     private ArrayList<String> valueList;
 
-    public KeyBoardAdapter(Context mContext, ArrayList valueList) {
+    KeyBoardAdapter(Context mContext, ArrayList valueList) {
         this.mContext = mContext;
         this.valueList = valueList;
     }
@@ -45,7 +39,7 @@ public class KeyBoardAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder viewHolder;
         if (convertView == null) {
-            convertView = View.inflate(mContext, R.layout.grid_item_virtual_keyboard, null);
+            convertView = View.inflate(mContext, R.layout.number_keyboard_item, null);
             viewHolder = new ViewHolder();
             viewHolder.btnKey = (TextView) convertView.findViewById(R.id.btn_keys);
             viewHolder.imgDelete = (RelativeLayout) convertView.findViewById(R.id.imgDelete);
@@ -59,7 +53,6 @@ public class KeyBoardAdapter extends BaseAdapter {
             viewHolder.imgDelete.setVisibility(View.INVISIBLE);
             viewHolder.btnKey.setVisibility(View.VISIBLE);
             viewHolder.btnKey.setText(valueList.get(position));
-//            viewHolder.btnKey.setBackgroundColor(Color.parseColor("#e0e0e0"));
         } else if (position == 11) {
             viewHolder.btnKey.setBackgroundResource(R.mipmap.keyboard_delete_img);
             viewHolder.imgDelete.setVisibility(View.VISIBLE);
@@ -70,14 +63,26 @@ public class KeyBoardAdapter extends BaseAdapter {
             viewHolder.btnKey.setText(valueList.get(position));
         }
 
+        if (itemHeight > 0) {
+            AbsListView.LayoutParams layoutParams = (AbsListView.LayoutParams) convertView.getLayoutParams();
+            if (layoutParams == null) {
+                layoutParams = new AbsListView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+            }
+            layoutParams.height = itemHeight;
+            convertView.setLayoutParams(layoutParams);
+        }
         return convertView;
+    }
+
+    void setItemHeight(int itemHeight) {
+        this.itemHeight = itemHeight;
     }
 
     /**
      * 存放控件
      */
-    public final class ViewHolder {
-        public TextView btnKey;
-        public RelativeLayout imgDelete;
+    private final class ViewHolder {
+        private TextView btnKey;
+        private RelativeLayout imgDelete;
     }
 }

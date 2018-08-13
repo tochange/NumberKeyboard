@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/closing_panel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#bdbdbd" />
+
+        <RelativeLayout
+            android:id="@+id/layoutBack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#f5f5f5"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/imgBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@mipmap/keyboard_back_img" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_above="@id/layoutBack"
+            android:background="#bdbdbd" />
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffc">
+
+        <View
+            android:id="@+id/right_line"
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:background="#bdbdbd" />
+
+        <LinearLayout
+            android:id="@+id/ok_cancel_panel"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@+id/right_line"
+            android:orientation="vertical"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/ok"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_gird_item"
+                android:gravity="center"
+                android:text="确定"
+                android:textSize="20sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="#bdbdbd" />
+
+            <TextView
+                android:id="@+id/cancel"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_gird_item"
+                android:gravity="center"
+                android:text="取消"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <!-- 输入键盘 -->
+        <GridView
+            android:id="@+id/gv_keyboard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@id/ok_cancel_panel"
+            android:background="#bdbdbd"
+            android:horizontalSpacing="1px"
+            android:numColumns="@integer/numColumns"
+            android:scrollbars="none"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="1px" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#bdbdbd" />
+</LinearLayout>
