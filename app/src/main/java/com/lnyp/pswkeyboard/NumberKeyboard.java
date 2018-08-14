@@ -70,7 +70,7 @@ public class NumberKeyboard extends RelativeLayout implements View.OnClickListen
             public void run() {
                 int numColumns = getResources().getInteger(R.integer.numColumns);
                 final int itemHeight = getItemHeight(view) / (keyBoardAdapter.getCount() / numColumns);
-                keyBoardAdapter.setItemHeight(itemHeight - 1);
+                keyBoardAdapter.setItemHeight(itemHeight);
                 keyBoardAdapter.notifyDataSetChanged();
             }
         }, 100);

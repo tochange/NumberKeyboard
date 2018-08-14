@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#efefef"
+    android:padding="50dp"
     tools:context="com.lnyp.pswkeyboard.NormalKeyBoardActivity">
 
 
@@ -24,9 +25,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_gravity="bottom"
-        app:height_dp="200"
+        app:height_dp="400"
         app:key_type="x"
-        app:width_dp="300"
+        app:width_dp="600"
         app:with_control="true"
         app:with_ok_cancel="true" />
 

@@ -3,7 +3,9 @@
     android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:background="@color/divider"
+    android:orientation="vertical"
+    android:padding="1px">
 
     <LinearLayout
         android:id="@+id/closing_panel"
@@ -11,12 +13,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:visibility="visible">
-
-        <View
-            android:id="@+id/line"
-            android:layout_width="match_parent"
-            android:layout_height="1px"
-            android:background="#bdbdbd" />
 
         <RelativeLayout
             android:id="@+id/layoutBack"
@@ -37,27 +33,18 @@
             android:layout_width="match_parent"
             android:layout_height="1px"
             android:layout_above="@id/layoutBack"
-            android:background="#bdbdbd" />
+            android:background="@color/divider" />
     </LinearLayout>
-
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#ffc">
-
-        <View
-            android:id="@+id/right_line"
-            android:layout_width="1px"
-            android:layout_height="match_parent"
-            android:layout_alignParentEnd="true"
-            android:background="#bdbdbd" />
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:id="@+id/ok_cancel_panel"
             android:layout_width="60dp"
             android:layout_height="match_parent"
-            android:layout_toLeftOf="@+id/right_line"
+            android:layout_alignParentEnd="true"
             android:orientation="vertical"
             android:weightSum="2">
 
@@ -74,7 +61,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1px"
-                android:background="#bdbdbd" />
+                android:background="@color/divider" />
 
             <TextView
                 android:id="@+id/cancel"
@@ -92,8 +79,8 @@
             android:id="@+id/gv_keyboard"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_toLeftOf="@id/ok_cancel_panel"
-            android:background="#bdbdbd"
+            android:layout_toStartOf="@id/ok_cancel_panel"
+            android:background="@color/divider"
             android:horizontalSpacing="1px"
             android:numColumns="@integer/numColumns"
             android:scrollbars="none"
@@ -101,8 +88,4 @@
             android:verticalSpacing="1px" />
     </RelativeLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:background="#bdbdbd" />
 </LinearLayout>
