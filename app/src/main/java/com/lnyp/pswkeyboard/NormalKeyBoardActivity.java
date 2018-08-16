@@ -14,6 +14,17 @@ import java.lang.reflect.Method;
 public class NormalKeyBoardActivity extends AppCompatActivity {
     private EditText textAmount;
 
+    public void showDialog(View view) {
+        AuthDialog dialog = new AuthDialog(this);
+        dialog.setCallback(new AuthDialog.Callback() {
+            @Override
+            public void onResult(int type, String content) {
+                Toast.makeText(NormalKeyBoardActivity.this, content + "", Toast.LENGTH_SHORT).show();
+            }
+        });
+        dialog.show();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

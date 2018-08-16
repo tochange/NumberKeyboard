@@ -2,6 +2,9 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
+    <color name="default_title_bg">#fff</color>
+    <color name="select_title_bg">#fcc</color>
+
     <color name="colorAccent">#FF4081</color>
     <color name="divider">#bdbdbd</color>
     <color name="dividerw">#bdbdbd</color>

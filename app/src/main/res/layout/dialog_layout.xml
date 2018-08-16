@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_root"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:weightSum="4">
+
+        <TextView
+            android:id="@+id/phone"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="@color/select_title_bg"
+            android:text="手机号码" />
+
+        <TextView
+            android:id="@+id/pay_code"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="@color/default_title_bg"
+            android:text="付款码" />
+
+        <TextView
+            android:id="@+id/ic_card"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="@color/default_title_bg"
+            android:text="读取IC卡" />
+
+        <TextView
+            android:id="@+id/vip"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="@color/default_title_bg"
+            android:text="会员卡号" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <TextView
+            android:id="@+id/input_title"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="请输入手机号" />
+
+        <EditText
+            android:id="@+id/input_content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="请输入" />
+    </LinearLayout>
+
+    <com.lnyp.pswkeyboard.NumberKeyboard
+        android:id="@+id/key_board"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:height_dp="400"
+        app:key_type="zero_zero"
+        app:width_dp="600"
+        app:with_ok_cancel="true" />
+</LinearLayout>
